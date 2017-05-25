@@ -1,0 +1,7 @@
+port 26379
+daemonize yes
+
+sentinel monitor mymaster1 127.0.0.1 7000 1
+sentinel down-after-milliseconds mymaster1 60000
+sentinel failover-timeout mymaster1 180000
+sentinel parallel-syncs mymaster1 1
